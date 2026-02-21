@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+@theme {
+  --color-deep-ocean: #0E1F2C;
+  --color-turquoise-horizon: #1F6F78;
+  --color-pearl-white: #F7F9FA;
+  --color-sunset-gold: #C6A75E;
+}
