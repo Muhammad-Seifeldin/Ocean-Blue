@@ -1,6 +1,5 @@
 import { useCallback } from "react";
 import type { ReactNode } from "react";
-import CtaBanner from "../../components/sections/CtaBanner";
 import HeroSection from "../../components/sections/HeroSection";
 import ContactInfo from "./ContactInfo";
 import MapEmbed from "./MapEmbed";
