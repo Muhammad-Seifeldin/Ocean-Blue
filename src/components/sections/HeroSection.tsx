@@ -37,6 +37,7 @@ const HeroSection = ({
 			{/* Background Image */}
 			<div className="absolute inset-0 z-0">
 				<img src={image} alt={title} className="w-full h-full object-cover" />
+				<div className="absolute inset-0 bg-[#0B2545]/50" />
 				<div className="absolute inset-0 bg-linear-to-r from-[#0B2545]/80 via-[#0A4D68]/50 to-transparent" />
 			</div>
 
