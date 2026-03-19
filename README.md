@@ -1,69 +1,89 @@
-# React + TypeScript + Vite
+# Ocean Blue 🌊
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully responsive tourism website for **Ocean Blue** — a Zanzibar-based agency specializing in sea excursions, beach experiences, and island transportation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## Expanding the ESLint configuration
+- **React 19** + **TypeScript** — strict mode, fully typed
+- **Tailwind CSS v4** — utility-first styling with dark mode support
+- **Motion** — smooth page transitions and scroll animations
+- **React Router v7** — client-side routing with lazy loading
+- **React Hook Form** + **Zod** — multi-step booking form with validation
+- **TanStack Query** + **Axios** — async state management and API calls
+- **Lucide React** — icon library
+- **next-themes** — dark/light mode toggle
+- **Biome** — linting and formatting
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Pages
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Home** — hero, featured excursions, why choose us, testimonials
+- **Excursions** — filterable grid with detail modal
+- **Transportation** — transfer services
+- **About** — story, stats, core values
+- **Gallery** — filterable photo grid with lightbox
+- **Contact** — contact info and map
+- **Booking** — dedicated multi-step booking form
+- **Privacy Policy** + **Terms & Conditions**
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+## Features
+
+- Multi-step booking form with Zod validation (on blur)
+- Excursion detail modal with included/not included breakdown
+- Gallery lightbox with keyboard navigation
+- Smooth page transitions with Motion
+- Scroll-triggered animations
+- Dark / light mode with CSS-only theme switching
+- Fully responsive — mobile first
+- Lazy loaded pages for fast initial load
+- Sticky frosted glass navbar
+- Scroll to top on navigation
+
+---
+
+## Project Structure
+```
+src/
+├── api/          # Axios instance and API functions
+├── components/   # Reusable UI, layout, booking, and section components
+├── data/         # Static content for excursions and transportation
+├── hooks/        # Custom React hooks
+├── pages/        # Page components organized by route
+├── providers/    # App-level providers (theme, query)
+├── routes/       # Centralized route definitions
+├── schemas/      # Zod validation schemas
+├── types/        # TypeScript type definitions
+└── utils/        # Helper and formatter functions
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Getting Started
+```bash
+# Install dependencies
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
+
+---
+
+## Images
+
+Place all images in the `public/images/` folder following this structure:
+```
+public/images/
+├── hero/
+├── excursions/
+├── transportation/
+└── gallery/
 ```
