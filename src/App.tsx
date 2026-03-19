@@ -1,35 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { AnimatePresence } from "motion/react";
+import type { ReactNode } from "react";
+import { Outlet, useLocation } from "react-router-dom";
+import PageTransition from "./components/layout/PageTransition";
+import PageWrapper from "./components/layout/PageWrapper";
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = (): ReactNode => {
+	const location = useLocation();
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+	return (
+		<PageWrapper>
+			<AnimatePresence mode="wait">
+				<PageTransition key={location.pathname}>
+					<Outlet />
+				</PageTransition>
+			</AnimatePresence>
+		</PageWrapper>
+	);
+};
 
-export default App
+export default App;
