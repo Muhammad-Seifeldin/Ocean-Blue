@@ -18,7 +18,8 @@ const quickLinks: NavLink[] = [
 	{ label: "Transportation", path: "/transportation" },
 	{ label: "About Us", path: "/about" },
 	{ label: "Gallery", path: "/gallery" },
-	{ label: "Contact & Book", path: "/contact" },
+	{ label: "Contact", path: "/contact" },
+	{ label: "Book Online", path: "/booking" },
 ];
 
 const excursionLinks: NavLink[] = [

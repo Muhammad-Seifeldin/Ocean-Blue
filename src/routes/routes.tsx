@@ -9,6 +9,7 @@ const Transportation = lazy(() => import("../pages/Transportation"));
 const About = lazy(() => import("../pages/About"));
 const Gallery = lazy(() => import("../pages/Gallery"));
 const Contact = lazy(() => import("../pages/Contact"));
+const Booking = lazy(() => import("../pages/Booking"));
 const PrivacyPolicy = lazy(() => import("../pages/PrivacyPolicy"));
 const Terms = lazy(() => import("../pages/Terms"));
 
@@ -68,6 +69,14 @@ export const router = createBrowserRouter([
 				element: (
 					<Suspense fallback={<PageLoader />}>
 						<Contact />
+					</Suspense>
+				),
+			},
+			{
+				path: "booking",
+				element: (
+					<Suspense fallback={<PageLoader />}>
+						<Booking />
 					</Suspense>
 				),
 			},

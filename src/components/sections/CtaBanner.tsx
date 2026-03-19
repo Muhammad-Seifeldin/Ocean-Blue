@@ -19,7 +19,7 @@ interface CtaBannerProps {
 const CtaBanner = ({
 	title = "Ready to Explore Zanzibar?",
 	subtitle = "Book your ocean adventure today and create memories that last a lifetime.",
-	primaryCta = { label: "Book a Tour", path: "/contact" },
+	primaryCta = { label: "Book a Tour", path: "/booking" },
 	secondaryCta = { label: "View Excursions", path: "/excursions" },
 }: CtaBannerProps): ReactNode => {
 	const { ref, isInView } = useScrollAnimation();

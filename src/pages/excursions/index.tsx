@@ -7,17 +7,16 @@ const Excursions = (): ReactNode => {
 	return (
 		<>
 			<HeroSection
-				label="Sea Excursions"
 				title="Unforgettable Ocean Adventures"
 				subtitle="From snorkeling in pristine coral reefs to sailing on traditional dhows at sunset — every excursion is crafted for memories that last a lifetime."
 				image="/images/hero/hero-excursions.png"
-				primaryCta={{ label: "Book Now", path: "/contact" }}
+				primaryCta={{ label: "Book Now", path: "/booking" }}
 			/>
 			<ExcursionGrid />
 			<CtaBanner
 				title="Can't Find What You're Looking For?"
 				subtitle="We create fully custom tours tailored to your group, interests, and budget. Just ask."
-				primaryCta={{ label: "Plan a Custom Tour", path: "/contact" }}
+				primaryCta={{ label: "Plan a Custom Tour", path: "/booking" }}
 				secondaryCta={{ label: "View Transportation", path: "/transportation" }}
 			/>
 		</>

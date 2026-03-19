@@ -81,7 +81,7 @@ const TransportCard = ({ option }: TransportCardProps): ReactNode => {
 				</div>
 
 				<Link
-					to="/contact"
+					to="/booking"
 					className="
             mt-1 w-full py-2.5 rounded-full text-sm font-semibold
             flex items-center justify-center gap-1.5

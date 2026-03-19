@@ -2,9 +2,9 @@ import { motion } from "motion/react";
 import { Mail, MapPin, Phone, Clock } from "lucide-react";
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
+import { Link } from "react-router-dom";
 import SectionLabel from "../../components/ui/SectionLabel";
 import useScrollAnimation from "../../hooks/useScrollAnimation";
-import BookingForm from "../../components/booking/BookingForm";
 
 interface ContactItem {
 	icon: LucideIcon;
@@ -42,7 +42,7 @@ const ContactInfo = (): ReactNode => {
 	const { ref, isInView } = useScrollAnimation();
 
 	return (
-		<section id="booking" className="py-20 md:py-28 bg-white dark:bg-[#030f1c]">
+		<section className="py-20 md:py-28 bg-white dark:bg-[#030f1c]">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div
 					ref={ref}
@@ -120,7 +120,7 @@ const ContactInfo = (): ReactNode => {
 						<div
 							className="
               p-4 rounded-2xl
-              bg-[#3CC4C9]/10 dark:bg-[#3CC4C9]/10
+              bg-[#3CC4C9]/10
               border border-[#3CC4C9]/20
             "
 						>
@@ -134,13 +134,40 @@ const ContactInfo = (): ReactNode => {
 						</div>
 					</motion.div>
 
-					{/* Right — Booking Form */}
+					{/* Right — Book CTA */}
 					<motion.div
 						initial={{ opacity: 0, x: 32 }}
 						animate={isInView ? { opacity: 1, x: 0 } : {}}
 						transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+						className="
+              flex flex-col items-center justify-center text-center
+              bg-[#0A4D68]/5 dark:bg-[#3CC4C9]/10
+              border border-[#0A4D68]/10 dark:border-[#3CC4C9]/20
+              rounded-3xl p-10 gap-6
+            "
 					>
-						<BookingForm />
+						<div className="flex flex-col gap-3">
+							<h3 className="text-2xl font-bold text-[#0A4D68] dark:text-[#DFF6FF]">
+								Ready to Book?
+							</h3>
+							<p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed max-w-sm">
+								Use our online booking form to reserve your excursion or
+								transfer. It only takes a few minutes and our team will confirm
+								within 24 hours.
+							</p>
+						</div>
+						<Link
+							to="/booking"
+							className="
+                px-8 py-3.5 rounded-full text-sm font-semibold
+                bg-[#F28C38] text-white
+                hover:bg-[#e07d2a]
+                transition-all duration-200
+                active:scale-[0.98]
+              "
+						>
+							Book Online Now
+						</Link>
 					</motion.div>
 				</div>
 			</div>

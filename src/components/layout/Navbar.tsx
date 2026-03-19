@@ -100,7 +100,7 @@ const Navbar = (): ReactNode => {
 					<div className="hidden md:flex items-center gap-2">
 						<ThemeToggle />
 						<Link
-							to="/contact"
+							to="/booking"
 							className="
                 px-5 py-2 rounded-full text-sm font-semibold
                 bg-[#F28C38] text-white
@@ -165,7 +165,7 @@ const Navbar = (): ReactNode => {
 							))}
 							<li className="pt-2">
 								<Link
-									to="/contact"
+									to="/booking"
 									className="
                     block px-4 py-3 rounded-xl text-sm font-semibold text-center
                     bg-[#F28C38] text-white

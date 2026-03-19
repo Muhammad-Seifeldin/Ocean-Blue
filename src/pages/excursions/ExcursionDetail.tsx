@@ -165,7 +165,7 @@ const ExcursionDetail = ({
 
 							{/* CTA */}
 							<Link
-								to="/contact"
+								to="/booking"
 								className="
                   w-full py-3.5 rounded-full text-sm font-semibold text-center
                   bg-[#F28C38] text-white
