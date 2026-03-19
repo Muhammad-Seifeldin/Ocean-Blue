@@ -65,7 +65,12 @@ const Navbar = (): ReactNode => {
 						<img
 							src="/images/logo.png"
 							alt="Ocean Blue"
-							className="h-8 md:h-10 w-auto"
+							className="h-8 md:h-10 w-auto dark:hidden"
+						/>
+						<img
+							src="/images/logo-white.png"
+							alt="Ocean Blue"
+							className="h-8 md:h-10 w-auto hidden dark:block"
 						/>
 					</Link>
 

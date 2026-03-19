@@ -3,19 +3,23 @@ import type { ReactNode } from "react";
 import { Link } from "react-router-dom";
 import SectionLabel from "../ui/SectionLabel";
 
+interface CtaButton {
+	label: string;
+	path?: string;
+	onClick?: () => void;
+}
+
 interface HeroSectionProps {
 	label?: string;
 	title: string;
 	subtitle: string;
 	image: string;
-	primaryCta?: {
-		label: string;
-		path: string;
-	};
-	secondaryCta?: {
-		label: string;
-		path: string;
-	};
+	primaryCta?: CtaButton;
+	secondaryCta?: CtaButton;
+	primaryCtaLabel?: string;
+	onPrimaryCta?: () => void;
+	secondaryCtaLabel?: string;
+	onSecondaryCta?: () => void;
 }
 
 const HeroSection = ({
@@ -25,6 +29,8 @@ const HeroSection = ({
 	image,
 	primaryCta,
 	secondaryCta,
+	primaryCtaLabel,
+	onPrimaryCta,
 }: HeroSectionProps): ReactNode => {
 	return (
 		<section className="relative w-full min-h-[85vh] md:min-h-[90vh] flex items-center overflow-hidden">
@@ -65,14 +71,29 @@ const HeroSection = ({
 						{subtitle}
 					</motion.p>
 
-					{(primaryCta ?? secondaryCta) && (
+					{(primaryCta ?? onPrimaryCta ?? secondaryCta) && (
 						<motion.div
 							initial={{ opacity: 0, y: 24 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5, delay: 0.4 }}
 							className="flex flex-wrap gap-4 mt-2"
 						>
-							{primaryCta && (
+							{onPrimaryCta && primaryCtaLabel ? (
+								<button
+									type="button"
+									onClick={onPrimaryCta}
+									className="
+                    px-8 py-3.5 rounded-full text-sm font-semibold
+                    bg-[#F28C38] text-white
+                    hover:bg-[#e07d2a]
+                    transition-all duration-200
+                    active:scale-[0.98]
+                    cursor-pointer
+                  "
+								>
+									{primaryCtaLabel}
+								</button>
+							) : primaryCta?.path ? (
 								<Link
 									to={primaryCta.path}
 									className="
@@ -85,8 +106,9 @@ const HeroSection = ({
 								>
 									{primaryCta.label}
 								</Link>
-							)}
-							{secondaryCta && (
+							) : null}
+
+							{secondaryCta?.path && (
 								<Link
 									to={secondaryCta.path}
 									className="
