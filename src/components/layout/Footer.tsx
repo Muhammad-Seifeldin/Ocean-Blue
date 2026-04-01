@@ -80,12 +80,12 @@ const Footer = (): ReactNode => {
 					<div className="flex flex-col gap-4">
 						<Link to="/" className="inline-block">
 							<img
-								src="/images/logo.png"
+								src="/images/logo.svg"
 								alt="Ocean Blue"
 								className="h-10 w-auto dark:hidden"
 							/>
 							<img
-								src="/images/logo-white.png"
+								src="/images/logo-white.svg"
 								alt="Ocean Blue"
 								className="h-10 w-auto hidden dark:block"
 							/>

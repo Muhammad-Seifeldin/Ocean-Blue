@@ -36,6 +36,7 @@ const TransportOptions = (): ReactNode => {
 								delay: index * 0.1,
 								ease: "easeOut",
 							}}
+							className="h-full"
 						>
 							<TransportCard option={option} />
 						</motion.div>

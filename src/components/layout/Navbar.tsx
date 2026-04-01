@@ -63,12 +63,12 @@ const Navbar = (): ReactNode => {
 					{/* Logo */}
 					<Link to="/" className="flex items-center gap-2 shrink-0">
 						<img
-							src="/images/logo.png"
+							src="/images/logo.svg"
 							alt="Ocean Blue"
 							className="h-8 md:h-10 w-auto dark:hidden"
 						/>
 						<img
-							src="/images/logo-white.png"
+							src="/images/logo-white.svg"
 							alt="Ocean Blue"
 							className="h-8 md:h-10 w-auto hidden dark:block"
 						/>

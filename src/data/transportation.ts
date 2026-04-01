@@ -67,6 +67,7 @@ export const transportOptions: TransportOption[] = [
 			"Fuel",
 			"Up to 8 hours",
 			"Flexible itinerary",
+			"Bottled water",
 		],
 	},
 	{
